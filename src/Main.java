@@ -90,7 +90,7 @@ public class Main {
             System.out.println(nameList.get(i));
         }
         System.out.println("------------------");
-        if (nameList.size() == 0) {
+        if (nameList.isEmpty()) {
             System.out.println("Sąrašas yra tuščias");
             createName(nameList, sc);
         }
@@ -108,7 +108,7 @@ public class Main {
      * @oldName kintamasis vardo įvedimui
      */
     public static void updateItem(ArrayList<String> nameList, Scanner sc) {
-        if (nameList.size() == 0) {
+        if (nameList.isEmpty()) {
             System.out.println("Sąrašas yra tuščias");
             createName(nameList, sc);
         } else {
@@ -128,8 +128,14 @@ public class Main {
 
     }
 
+    /**
+     * Funkcija trinti įvestam masyvo elementui
+     * @param nameList
+     * @param sc
+     */
+
     public static void deleteItem(ArrayList<String> nameList, Scanner sc) {
-            if (nameList.size() == 0) {
+            if (nameList.isEmpty()) {
                 System.out.println("Sąrašas yra tuščias");
                 createName(nameList, sc);
             } else {
