@@ -96,10 +96,21 @@ public class Main {
         }
     }
 
+    /**
+     * Funkcija atnaujina įvestą vardą.
+     * Kiekvieną kartą išveda vardų sąrašą
+     * Esant tuščiam sąrašui iškviečiama funkcija vardo sukūrimui
+     *
+     * @param nameList
+     * @param sc
+     * @createName funkcija vardui sukurti
+     * @readList funkcija sąrašo išvedimui
+     * @oldName kintamasis vardo įvedimui
+     */
     public static void updateItem(ArrayList<String> nameList, Scanner sc) {
         if (nameList.size() == 0) {
             System.out.println("Sąrašas yra tuščias");
-            createName(nameList,sc);
+            createName(nameList, sc);
         } else {
             readList(nameList, sc);
             System.out.println();
@@ -117,29 +128,27 @@ public class Main {
 
     }
 
-    public static void deleteItem (ArrayList<String> nameList, Scanner sc) {
-        if (nameList.size() == 0) {
-            System.out.println("Sąrašas yra tuščias");
-            createName(nameList,sc);
-        } else {
-            readList(nameList, sc);
-            System.out.println();
-            System.out.println("Įveskite vardą kurį norite ištrinti");
-            String deleteName = sc.nextLine();
-            if (nameList.contains(deleteName)) {
-                nameList.remove(deleteName);
-                System.out.println("Vardas " + "[ "+ deleteName + " ]" + " ištrintas.");
+    public static void deleteItem(ArrayList<String> nameList, Scanner sc) {
+            if (nameList.size() == 0) {
+                System.out.println("Sąrašas yra tuščias");
+                createName(nameList, sc);
             } else {
-                System.out.println("Įvestas vardas neegzistuoja");
+                readList(nameList, sc);
+                System.out.println();
+                System.out.println("Įveskite vardą kurį norite ištrinti");
+                String deleteName = sc.nextLine();
+                if (nameList.contains(deleteName)) {
+                    nameList.remove(deleteName);
+                    System.out.println("Vardas " + "[ " + deleteName + " ]" + " ištrintas.");
+                } else {
+                    System.out.println("Įvestas vardas neegzistuoja");
+                }
             }
-        }
     }
-
-
     /**
      * Iškviečia funkcija programai uždaryti
      */
-    public static void programExit() {
+    public static void programExit () {
         System.out.println("Programa uždaryta");
         System.exit(1);
     }
