@@ -71,12 +71,15 @@ public class Main {
      * @param sc       iškviečia įvedimą konsolėje
      */
     public static void createName(ArrayList<String> nameList, Scanner sc) {
-        System.out.println("Įveskite naują vardą");
-        String input = sc.nextLine();
-        if (nameList.contains(input)) {
-            System.out.println("Įvestas vardas jau egzistuoja");
-        } else
-            nameList.add(input);
+        while(true) {
+            System.out.println("Įveskite naują vardą");
+            String input = sc.nextLine();
+            if (nameList.contains(input)) {
+                System.out.println("Įvestas vardas jau egzistuoja");
+            } else
+                nameList.add(input);
+            break;
+        }
     }
 
     /**
@@ -122,6 +125,7 @@ public class Main {
                 int index = nameList.indexOf(oldName);
                 nameList.set(index, newName);
                 System.out.println("Vardas pakeistas iš " + oldName + " į " + newName);
+
             }
         }
 
